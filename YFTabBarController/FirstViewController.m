@@ -9,8 +9,13 @@
 #import "FirstViewController.h"
 #import "YFTextView.h"
 
-@interface FirstViewController ()
+static BOOL isStretch = YES;
 
+@interface FirstViewController ()
+{
+    NSString *_detailStr;
+    UILabel  *_detailLabel;
+}
 @end
 
 @implementation FirstViewController
@@ -18,13 +23,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;//这个属性真的很蛋疼
     
+    //自定义textview
     YFTextView *yfTextView = [[YFTextView alloc] initWithFrame:CGRectMake(30, 100, [UIScreen mainScreen].bounds.size.width - 60, 150)];
     yfTextView.strCount = 100;
     yfTextView.placeHolderLabel.text = @"请输入内容";
     [self.view addSubview:yfTextView];
+    
+    
+    _detailStr = @"NIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSCNIHAONSKCKSNCJKASNCKSACKSACNSC";
+    //长度可折叠的Label
+    _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(30, 300, [UIScreen mainScreen].bounds.size.width - 60, 70)];
+    _detailLabel.font = [UIFont systemFontOfSize:14.];
+    _detailLabel.numberOfLines = 0;
+    _detailLabel.userInteractionEnabled = YES;
+    _detailLabel.backgroundColor = [UIColor yellowColor];
+    _detailLabel.text = _detailStr;
+    [_detailLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(strecthTap:)]];
+    [self.view addSubview:_detailLabel];
+}
+
+- (void)strecthTap:(UITapGestureRecognizer *)tap {
+    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14.], NSFontAttributeName, nil];
+    CGSize size = [_detailStr boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 60, 0) options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+    if (size.height > 70) {
+        _detailLabel.frame = CGRectMake(_detailLabel.frame.origin.x, _detailLabel.frame.origin.y, _detailLabel.frame.size.width, isStretch ? size.height : 70);
+        isStretch = !isStretch;
+    }
 }
 
 
