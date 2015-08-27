@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "YFTextView.h"
 
 @interface FirstViewController ()
 
@@ -18,6 +19,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor purpleColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;//这个属性真的很蛋疼
+    
+    YFTextView *yfTextView = [[YFTextView alloc] initWithFrame:CGRectMake(30, 100, [UIScreen mainScreen].bounds.size.width - 60, 150)];
+    yfTextView.strCount = 100;
+    yfTextView.placeHolderLabel.text = @"请输入内容";
+    [self.view addSubview:yfTextView];
+}
+
+
+//点击空白区域收回键盘
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {

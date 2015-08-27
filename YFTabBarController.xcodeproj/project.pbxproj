@@ -18,6 +18,7 @@
 		4E1EE4B21B8D614E005CCA04 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EE4B11B8D614E005CCA04 /* SecondViewController.m */; };
 		4E1EE4B51B8D6157005CCA04 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EE4B41B8D6157005CCA04 /* ThirdViewController.m */; };
 		4E1EE4BC1B8DAB47005CCA04 /* YFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1EE4BB1B8DAB47005CCA04 /* YFButton.m */; };
+		4E648FF71B8EBD1F002BE5DF /* YFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E648FF61B8EBD1F002BE5DF /* YFTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,10 @@
 		4E1EE4B11B8D614E005CCA04 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		4E1EE4B31B8D6157005CCA04 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		4E1EE4B41B8D6157005CCA04 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		4E1EE4BA1B8DAB47005CCA04 /* YFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFButton.h; sourceTree = "<group>"; };
-		4E1EE4BB1B8DAB47005CCA04 /* YFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFButton.m; sourceTree = "<group>"; };
+		4E1EE4BA1B8DAB47005CCA04 /* YFButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YFButton.h; path = ../YFButton.h; sourceTree = "<group>"; };
+		4E1EE4BB1B8DAB47005CCA04 /* YFButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YFButton.m; path = ../YFButton.m; sourceTree = "<group>"; };
+		4E648FF51B8EBD1F002BE5DF /* YFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFTextView.h; sourceTree = "<group>"; };
+		4E648FF61B8EBD1F002BE5DF /* YFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +100,7 @@
 				4E1EE4891B8D5FFE005CCA04 /* AppDelegate.m */,
 				4E1EE4AA1B8D6068005CCA04 /* TabBarViewController.h */,
 				4E1EE4AB1B8D6068005CCA04 /* TabBarViewController.m */,
-				4E1EE4BA1B8DAB47005CCA04 /* YFButton.h */,
-				4E1EE4BB1B8DAB47005CCA04 /* YFButton.m */,
+				4E648FF41B8EBCF8002BE5DF /* YFTools */,
 				4E1EE4AD1B8D6142005CCA04 /* FirstViewController.h */,
 				4E1EE4AE1B8D6142005CCA04 /* FirstViewController.m */,
 				4E1EE4B01B8D614E005CCA04 /* SecondViewController.h */,
@@ -137,6 +139,17 @@
 				4E1EE49F1B8D5FFE005CCA04 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E648FF41B8EBCF8002BE5DF /* YFTools */ = {
+			isa = PBXGroup;
+			children = (
+				4E1EE4BA1B8DAB47005CCA04 /* YFButton.h */,
+				4E1EE4BB1B8DAB47005CCA04 /* YFButton.m */,
+				4E648FF51B8EBD1F002BE5DF /* YFTextView.h */,
+				4E648FF61B8EBD1F002BE5DF /* YFTextView.m */,
+			);
+			path = YFTools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +256,7 @@
 				4E1EE48A1B8D5FFE005CCA04 /* AppDelegate.m in Sources */,
 				4E1EE4B51B8D6157005CCA04 /* ThirdViewController.m in Sources */,
 				4E1EE4BC1B8DAB47005CCA04 /* YFButton.m in Sources */,
+				4E648FF71B8EBD1F002BE5DF /* YFTextView.m in Sources */,
 				4E1EE4AC1B8D6068005CCA04 /* TabBarViewController.m in Sources */,
 				4E1EE4871B8D5FFE005CCA04 /* main.m in Sources */,
 				4E1EE4AF1B8D6142005CCA04 /* FirstViewController.m in Sources */,
@@ -372,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YFTabBarController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -382,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YFTabBarController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
